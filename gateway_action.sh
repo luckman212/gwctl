@@ -16,8 +16,8 @@ SELF=$(basename "$0")
  *
  */
 
-$self = $argv[1];
 array_shift($argv);
+$self = array_shift($argv);
 
 require_once("config.inc");
 require_once("gwlb.inc");
@@ -42,7 +42,6 @@ function show_help() {
 $opts = [];
 $args = [];
 foreach ($argv as $i => $arg) {
-    if ($i === 0) continue;
     if ($arg[0] === '-') {
         $opts[] = $arg;
     } else {
