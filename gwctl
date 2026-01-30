@@ -7,7 +7,7 @@ SELF=$(basename "$0")
 <?php
 
 /*
- * gateway_action.php
+ * gwctl
  * helper to enable/disable gateways
  *
  * TODO:
