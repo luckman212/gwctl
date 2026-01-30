@@ -6,14 +6,14 @@ The script uses native methods of updating the firewall's configuration, so the 
 
 # How to use
 
-1. Download `gateway_action.sh` to your firewall (`/root` or `/root/bin` are sensible locations)
-2. Make it executable (`chmod +x gateway_action.sh`)
+1. Download `gwctl` to your firewall (`/root` or `/root/bin` are sensible locations)
+2. Make it executable (`chmod +x gwctl`)
 3. Run the script (it will output help if run with no args or with `-h`, `--help`)
 
 # Help
 
 ```
-Usage: gateway_action.sh <gateway> <action> [--force]
+Usage: gwctl <gateway> <action> [--force]
   <gateway>  can be index# or name
   <action>   one of: enable, disable
   --force    apply action even if gateway is already in desired state
@@ -29,5 +29,5 @@ Usage: gateway_action.sh <gateway> <action> [--force]
 Enable the `WAN1` gateway:
 
 ```
-/root/gateway_action.sh WAN1 enable
+/root/gwctl WAN1 enable
 ```
