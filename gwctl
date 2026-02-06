@@ -50,9 +50,9 @@ foreach ($argv as $i => $arg) {
 }
 
 // process args
-if ($argc < 3 || !empty(array_intersect($opts, ['-h', '--help']))) { show_help(); }
-$selected_gw = $argv[1];
-$action = $argv[2];
+if (count($args) < 2 || !empty(array_intersect($opts, ['-h', '--help']))) { show_help(); }
+$selected_gw = $args[0];
+$action = $args[1];
 $force = !empty(array_intersect($opts, ['-f', '--force']));
 $gwid = filter_var($selected_gw, FILTER_VALIDATE_INT, ["options" => ["min_range" => 0]]);
 
@@ -69,7 +69,7 @@ if ($gwid === false) {
 	$gwid = intval($selected_gw);
 }
 
-if (empty($gwid) || !isset($a_gateways[$gwid])) {
+if (!isset($gwid) || !isset($a_gateways[$gwid])) {
 	echo "invalid gateway: {$selected_gw}\n";
 	exit(1);
 }
