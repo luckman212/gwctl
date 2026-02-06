@@ -24,10 +24,16 @@ Usage: gwctl <gateway> <action> [--force]
     [2] WG0 - 172.16.40.201 (tun_wg0)
     [3] WAN6_TUNNELV6 - 2001:dead:beef::1 (gif0)
 ```
-# Example
+# Examples
 
 Enable the `WAN1` gateway:
 
 ```
 /root/gwctl WAN1 enable
+```
+
+Disable the `WG0` gateway:
+
+```
+/root/gwctl 2 disable
 ```
